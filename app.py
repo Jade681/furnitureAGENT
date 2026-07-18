@@ -148,21 +148,21 @@ def get_ai_reply(user_question, product_info):
     if not product_info or product_info.strip() == "":
         return "抱歉..."
     
-    user_content = (   # ← 这一行前面是 4 个空格（与上面的 if 对齐）
-        f"客户问：{user_question}\n\n"   # ← 这一行前面是 8 个空格
-        "【以下为准确数据，请逐字复制，严禁改写】\n"   # ← 8 个空格
-        f"{product_info}\n"   # ← 8 个空格
-        "【以上为准确数据】\n\n"   # ← 8 个空格
-        "【回复要求】\n"   # ← 8 个空格
-        "1. 回复中的产品名称、价格、卖点，必须逐字复制上面的数据，不能改动一个标点。\n"   # ← 8 个空格
-        "2. 如果数据中没有客户问的信息，请回答：\"这个信息我暂时没有，您可以到店咨询。\"\n"   # ← 8 个空格
-        "3. 最后自然地邀请到店体验，邀请措辞每次要有变化。"   # ← 8 个空格
-    )   # ← 这里缩进回到 4 个空格（与 user_content = 对齐）
+    user_content = (   
+        f"客户问：{user_question}\n\n"  
+        "【以下为准确数据，请逐字复制，严禁改写】\n"   
+        f"{product_info}\n"   
+        "【以上为准确数据】\n\n"   
+        "【回复要求】\n"   
+        "1. 回复中的产品名称、价格、卖点，必须逐字复制上面的数据，不能改动一个标点。\n"   
+        "2. 如果数据中没有客户问的信息，请回答：\"这个信息我暂时没有，您可以到店咨询。\"\n"   
+        "3. 最后自然地邀请到店体验，邀请措辞每次要有变化。"   
+    )   
     
-    messages = [   # ← 4 个空格（与 user_content 对齐）
-        {"role": "system", "content": SYSTEM_PROMPT},   # ← 8 个空格
-        {"role": "user", "content": user_content}   # ← 8 个空格
-    ]   # ← 4 个空格
+    messages = [   
+        {"role": "system", "content": SYSTEM_PROMPT},   
+        {"role": "user", "content": user_content}   
+    ]   
     
     # 准备请求
     url = "https://api.deepseek.com/v1/chat/completions"
