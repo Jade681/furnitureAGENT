@@ -202,26 +202,29 @@ def get_ai_reply(user_question, product_info):
     #  网页界面
 if __name__ == "__main__":
     
+    st.title("好百年家具广场 · 智能导购")
+    
 
-    st.set_page_config(page_title="好百年家具导购", layout="centered")
     col1, col2 = st.columns(2)
     with col1:
         st.image("main1.jpg", use_container_width=True)
     with col2:
-        st.image("main2.jpg", use_container_width=True)
-    
-    col3, col4 = st.columns(2)
-    with col3:
         st.image("main3.jpg", use_container_width=True)
-    with col4:
+        
+        col3, col4 = st.columns(2)
+    with col3:
         st.image("main4.jpg", use_container_width=True)
-    
-    col5, col6 = st.columns(2)
-    with col5:
+    with col4:
         st.image("main5.jpg", use_container_width=True)
+        
+        col5, col6 = st.columns(2)
+    with col5:
+            st.image("main6.jpg", use_container_width=True)
     with col6:
-        st.image("main6.jpg", use_container_width=True)
-    st.title("好百年家具广场 · 智能导购")
+            st.image("main7.jpg", use_container_width=True)
+
+# 照片2单独放下面，居中铺满
+st.image("main2.jpg", use_container_width=True)
     st.caption("试试对我说：偏硬、预算3000左右、护脊、怕热……")
     st.info("💡 目前智能导购已录入部分喜临门床垫数据（共9款），可为您提供参考。店内还有更多床垫及沙发、餐桌、办公桌椅等全品类家具，欢迎到店体验！")
 
