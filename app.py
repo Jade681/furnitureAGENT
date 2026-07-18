@@ -1,4 +1,4 @@
-APIKEY=("sk-b0f54fe302014170851e0f7dda86af38")
+
 
 from data import furnitureLIST
 matching = {
