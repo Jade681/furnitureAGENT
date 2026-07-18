@@ -223,8 +223,8 @@ if __name__ == "__main__":
     with col6:
             st.image("main7.jpg", use_container_width=True)
 
-# 照片2单独放下面，居中铺满
-st.image("main2.jpg", use_container_width=True)
+    # 照片2单独放下面，居中铺满
+    st.image("main2.jpg", use_container_width=True)
     st.caption("试试对我说：偏硬、预算3000左右、护脊、怕热……")
     st.info("💡 目前智能导购已录入部分喜临门床垫数据（共9款），可为您提供参考。店内还有更多床垫及沙发、餐桌、办公桌椅等全品类家具，欢迎到店体验！")
 
