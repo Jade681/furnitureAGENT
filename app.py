@@ -60,21 +60,8 @@ def recommendation(x):
             finallist.append(m)
         
     return finallist
-'''
-if __name__=="__main__":
-    
-    while True:
-        n=input("请输入你的需求(输入exit退出): ")
-        result=recommendation(n)
-        if result:
-            print(result)
-        elif n=="exit":
-            break
-        else:
-            print("没有匹配床垫，请换个关键词")
-'''
-            
 
+            
 def matches(x):
     mlist=[]
     for i in furnitureLIST:
@@ -203,7 +190,7 @@ if __name__ == "__main__":
     
 
     st.set_page_config(page_title="好百年家具导购", layout="centered")
-    st.title("🪑 好百年家具广场 · 智能导购")
+    st.title("好百年家具广场 · 智能导购")
     st.caption("试试对我说：偏硬、预算3000左右、护脊、怕热……")
 
     # 初始化聊天记录
