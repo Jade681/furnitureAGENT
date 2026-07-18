@@ -154,10 +154,21 @@ def get_ai_reply(user_question, product_info):
         return "抱歉，根据您的描述，我暂时没找到完全匹配的床垫。您方便的话可以来店里看看，我们有更多款式可以体验。"
     
     # 构建发给 AI 的消息
-    messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": "客户问：" + user_question + "\n\n【可参考的准确数据（仅限以下内容，禁止编造）】\n" + product_info + "\n\n【回复要求】\n1. 型号、价格、卖点必须逐字复制上面【可参考的准确数据】里的内容。\n2. 如果上面的数据里没有客户问的信息（如保修、库存），请直接回答：\"您问的这个信息我暂时没有，建议您直接到店或拨打 15179522688 确认。\"\n3. 最后再自然邀请到店体验，措辞要有变化，不要每次都一样。"}
-    ]
+   user_content = (
+    f"客户问：{user_question}\n\n"
+    "【以下为准确数据，请逐字复制，严禁改写】\n"
+    f"{product_info}\n"
+    "【以上为准确数据】\n\n"
+    "【回复要求】\n"
+    "1. 回复中的产品名称、价格、卖点，必须逐字复制上面的数据，不能改动一个标点。\n"
+    "2. 如果数据中没有客户问的信息，请回答：\"这个信息我暂时没有，您可以到店咨询。\"\n"
+    "3. 最后自然地邀请到店体验，邀请措辞每次要有变化。"
+)
+
+messages = [
+    {"role": "system", "content": SYSTEM_PROMPT},
+    {"role": "user", "content": user_content}
+]
     
     # 准备请求
     url = "https://api.deepseek.com/v1/chat/completions"
