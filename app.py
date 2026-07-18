@@ -191,7 +191,7 @@ def get_ai_reply(user_question, product_info):
     # 构建发给 AI 的消息
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": f"客户问：{user_question}\n\n我们店里有以下匹配的商品：\n{product_info}\n\n请根据这些信息，生成一段自然、亲切的销售话术，并邀请客户到店体验。"}
+        {"role": "user", "content": "客户问：" + user_question + "\n\n【可参考的准确数据（仅限以下内容，禁止编造）】\n" + product_info + "\n\n【回复要求】\n1. 型号、价格、卖点必须逐字复制上面【可参考的准确数据】里的内容。\n2. 如果上面的数据里没有客户问的信息（如保修、库存），请直接回答：\"您问的这个信息我暂时没有，建议您直接到店或拨打 15179522688 确认。\"\n3. 最后再自然邀请到店体验，措辞要有变化，不要每次都一样。"}
     ]
     
     # 准备请求
